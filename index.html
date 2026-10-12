@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Копилка воспитателя — конспекты для воспитателей Беларуси</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #fdf8f0;
+    color: #3a3a3a;
+    line-height: 1.6;
+  }
+  header {
+    background: linear-gradient(135deg, #f7d9a0, #c8e6c9);
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 0 0 30px 30px;
+  }
+  header h1 {
+    font-size: 2em;
+    color: #4a5d3a;
+    margin-bottom: 8px;
+  }
+  header p {
+    font-size: 1.1em;
+    color: #5a6b4a;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .welcome {
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-left: 5px solid #a5d6a7;
+  }
+  .welcome h2 {
+    color: #4a5d3a;
+    margin-bottom: 12px;
+    font-size: 1.3em;
+  }
+  .welcome p {
+    margin-bottom: 10px;
+    color: #5a6b4a;
+  }
+  .groups-intro {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed #e8dcc0;
+  }
+  .groups-intro h3 {
+    color: #4a5d3a;
+    font-size: 1.15em;
+    margin-bottom: 15px;
+  }
+  .group-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .group-card {
+    flex: 1 1 calc(50% - 10px);
+    background: #f9f1e0;
+    border-radius: 15px;
+    padding: 14px 18px;
+    color: #4a5d3a;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+    text-decoration: none;
+  }
+  .group-card:hover {
+    border-color: #a5d6a7;
+    background: #f5e8d0;
+  }
+  .group-card .num {
+    background: #a5d6a7;
+    color: #2e4a2e;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    flex-shrink: 0;
+    font-size: 0.9em;
+  }
+  .instruction {
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-left: 5px solid #f7d9a0;
+  }
+  .instruction h2 {
+    color: #4a5d3a;
+    margin-bottom: 8px;
+    font-size: 1.3em;
+  }
+  .instruction-sub {
+    color: #5a6b4a;
+    margin-bottom: 20px;
+  }
+  .steps {
+    list-style: none;
+  }
+  .steps li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px dashed #e8dcc0;
+    color: #5a6b4a;
+    font-size: 0.98em;
+  }
+  .steps li:last-child {
+    border-bottom: none;
+  }
+  .steps li strong {
+    color: #4a5d3a;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 1.05em;
+  }
+  .step-num {
+    background: #a5d6a7;
+    color: #2e4a2e;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    flex-shrink: 0;
+    font-size: 1em;
+  }
+  .instruction-footer {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #e8dcc0;
+    color: #4a5d3a;
+    font-weight: 600;
+    text-align: center;
+  }
+  .search-box {
+    margin: 25px 0;
+  }
+  .search-box input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #c8e6c9;
+    border-radius: 25px;
+    font-size: 1em;
+    font-family: 'Nunito', sans-serif;
+    background: #fff;
+    outline: none;
+  }
+  .search-box input:focus {
+    border-color: #a5d6a7;
+  }
+  .group-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    padding: 20px 22px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-decoration: none;
+    color: #4a5d3a;
+    font-weight: 700;
+    font-size: 1.1em;
+    border-left: 5px solid #a5d6a7;
+    transition: all 0.3s;
+  }
+  .group-link:hover {
+    background: #f9f1e0;
+    transform: translateX(4px);
+  }
+  .group-link .arrow-go {
+    color: #81c784;
+    font-size: 1.3em;
+  }
+  .section {
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .section h2 {
+    color: #4a5d3a;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+  }
+  .section p {
+    margin-bottom: 10px;
+  }
+  form input, form select, form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border: 2px solid #e8dcc0;
+    border-radius: 15px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1em;
+    background: #fdf8f0;
+    outline: none;
+  }
+  form input:focus, form select:focus, form textarea:focus {
+    border-color: #a5d6a7;
+  }
+  form button {
+    background: #f7d9a0;
+    color: #4a5d3a;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 25px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  form button:hover {
+    background: #f5c878;
+  }
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #fdf8f0;
+    border-radius: 15px;
+    padding: 16px 20px;
+    text-decoration: none;
+    color: #4a5d3a;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+  }
+  .contact-item:hover {
+    border-color: #a5d6a7;
+    background: #f9f1e0;
+  }
+  .contact-icon {
+    font-size: 1.6em;
+    flex-shrink: 0;
+  }
+  .contact-item strong {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 1.05em;
+  }
+  .contact-note {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #e8dcc0;
+    color: #8a8a7a;
+    font-size: 0.9em;
+    text-align: center;
+  }
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #8a8a7a;
+    font-size: 0.95em;
+  }
+  .hidden { display: none; }
+  @media (max-width: 500px) {
+    .group-card { flex: 1 1 100%; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🧸 Копилка воспитателя</h1>
+  <p>Конспекты для воспитателей Беларуси</p>
+</header>
+
+<div class="container">
+
+  <!-- ПРИВЕТСТВИЕ -->
+  <div class="welcome">
+    <h2>Добро пожаловать в «Копилку воспитателя»!</h2>
+    <p>Этот проект создан, чтобы поддержать воспитателей по всей Республике Беларусь.</p>
+    <p>Здесь мы собираем конспекты занятий в одну большую копилку, чтобы сделать работу педагогов еще легче и доступнее.</p>
+    <p><strong>Автор и идея проекта — Калоша Александра Геннадьевна, воспитатель дошкольного образования.</strong></p>
+
+    <div class="groups-intro">
+      <h3>📚 Что вы найдёте на сайте</h3>
+      <p>Различные конспекты занятий по всем возрастным группам:</p>
+      <div class="group-cards">
+        <a href="https://drive.google.com/drive/folders/1cE6yERbnH0-0YZRKPDZRxJv-aw5SJ1tq" target="_blank" class="group-card"><span class="num">1</span> Первая младшая</a>
+        <a href="https://drive.google.com/drive/folders/1RjcZZmuInjeUPBkdhs_CS0x-k9Y_lOSq" target="_blank" class="group-card"><span class="num">2</span> Вторая младшая</a>
+        <a href="https://drive.google.com/drive/folders/15VfKMzgvO25A-1EVDL1DcJ7JNWGMQEZD" target="_blank" class="group-card"><span class="num">3</span> Средняя группа</a>
+        <a href="https://drive.google.com/drive/folders/1QiA7zwNb1fCHilRNDv5_dZwywIOU0jnn" target="_blank" class="group-card"><span class="num">4</span> Старшая группа</a>
+        <a href="https://drive.google.com/drive/folders/1TqqgqElOjvI8EubUBi1MJorS_SzbRkyQ" target="_blank" class="group-card"><span class="num">5</span> Старшая группа (второй год обучения)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- АЛГОРИТМ -->
+  <div class="instruction">
+    <h2>🎯 Как получить нужный конспект?</h2>
+    <p class="instruction-sub">Действуйте по следующему алгоритму:</p>
+    <ol class="steps">
+      <li>
+        <span class="step-num">1</span>
+        <div>
+          <strong>Нажмите на свою возрастную группу</strong><br>
+          Список групп — ниже. Нажмите на нужную, и откроется папка с конспектами на Google Drive.
+        </div>
+      </li>
+      <li>
+        <span class="step-num">2</span>
+        <div>
+          <strong>Выберите образовательную область</strong><br>
+          Внутри папки группы лежат подпапки: Рисование, Лепка, Аппликация, ФЭМП и другие. Откройте нужную.
+        </div>
+      </li>
+      <li>
+        <span class="step-num">3</span>
+        <div>
+          <strong>Найдите конспект по теме</strong><br>
+          Внутри области — файлы с конспектами. Название файла подскажет тему занятия.
+        </div>
+      </li>
+      <li>
+        <span class="step-num">4</span>
+        <div>
+          <strong>Скачайте или откройте</strong><br>
+          Нажмите на файл — можно посмотреть прямо в браузере или скачать на телефон/компьютер.
+        </div>
+      </li>
+      <li>
+        <span class="step-num">5</span>
+        <div>
+          <strong>Проведите занятие! 🎉</strong><br>
+          Всё готово. Если хотите — поделитесь своим конспектом в разделе ниже.
+        </div>
+      </li>
+    </ol>
+    <p class="instruction-footer">Всё бесплатно. Авторство сохраняется за педагогом.</p>
+  </div>
+
+  <!-- ПОИСК -->
+  <div class="search-box">
+    <input type="text" id="search" placeholder="🔍 Поиск по группам...">
+  </div>
+
+  <!-- ГРУППЫ -->
+  <div id="groups">
+
+    <a href="https://drive.google.com/drive/folders/1cE6yERbnH0-0YZRKPDZRxJv-aw5SJ1tq" target="_blank" class="group-link" data-name="первая младшая 1младшая">
+      <span>1-я младшая группа</span>
+      <span class="arrow-go">→</span>
+    </a>
+
+    <a href="https://drive.google.com/drive/folders/1RjcZZmuInjeUPBkdhs_CS0x-k9Y_lOSq" target="_blank" class="group-link" data-name="вторая младшая 2младшая">
+      <span>2-я младшая группа</span>
+      <span class="arrow-go">→</span>
+    </a>
+
+    <a href="https://drive.google.com/drive/folders/15VfKMzgvO25A-1EVDL1DcJ7JNWGMQEZD" target="_blank" class="group-link" data-name="средняя">
+      <span>Средняя группа</span>
+      <span class="arrow-go">→</span>
+    </a>
+
+    <a href="https://drive.google.com/drive/folders/1QiA7zwNb1fCHilRNDv5_dZwywIOU0jnn" target="_blank" class="group-link" data-name="старшая">
+      <span>Старшая группа</span>
+      <span class="arrow-go">→</span>
+    </a>
+
+    <a href="https://drive.google.com/drive/folders/1TqqgqElOjvI8EubUBi1MJorS_SzbRkyQ" target="_blank" class="group-link" data-name="старшая второй год 2год">
+      <span>Старшая группа (2-й год обучения)</span>
+      <span class="arrow-go">→</span>
+    </a>
+
+  </div>
+
+  <!-- ПОДЕЛИТЬСЯ -->
+  <div class="section">
+    <h2>✉️ Поделиться конспектом</h2>
+    <p>Если у вас есть свой конспект — пришлите его, и он появится в копилке с вашим именем.</p>
+    <form onsubmit="event.preventDefault(); alert('Спасибо! В ближайшее время мы свяжемся с вами. (Форма пока в разработке — пришлите конспект через Viber или на email)');">
+      <input type="text" placeholder="ФИО педагога" required>
+      <select required>
+        <option value="">Выберите группу</option>
+        <option>1-я младшая</option>
+        <option>2-я младшая</option>
+        <option>Средняя</option>
+        <option>Старшая</option>
+        <option>Старшая (2-й год)</option>
+      </select>
+      <select required>
+        <option value="">Выберите образовательную область</option>
+        <option>Рисование</option>
+        <option>Лепка</option>
+        <option>Аппликация</option>
+        <option>Конструирование</option>
+        <option>ФЭМП</option>
+        <option>Развитие речи</option>
+        <option>Обучение грамоте</option>
+        <option>Ребёнок и природа</option>
+        <option>Ребёнок и общество</option>
+        <option>Художественная литература</option>
+        <option>Музыка</option>
+        <option>Физкультура</option>
+      </select>
+      <input type="text" placeholder="Название конспекта" required>
+      <input type="file" accept=".doc,.docx,.pdf">
+      <button type="submit">Отправить</button>
+    </form>
+  </div>
+
+  <!-- СВЯЗЬ ПО КОНСПЕКТАМ -->
+  <div class="section contact">
+    <h2>📞 Связь по конспектам</h2>
+    <p>Есть вопрос, предложение или хотите прислать конспект напрямую? Напишите мне удобным способом:</p>
+
+    <div class="contact-list">
+      <a href="tel:+375299112454" class="contact-item">
+        <span class="contact-icon">📱</span>
+        <span>
+          <strong>Телефон / Viber</strong><br>
+          +375 29 911-24-54
+        </span>
+      </a>
+
+      <a href="mailto:kaloshaaleksa05@gmail.com" class="contact-item">
+        <span class="contact-icon">✉️</span>
+        <span>
+          <strong>Email</strong><br>
+          kaloshaaleksa05@gmail.com
+        </span>
+      </a>
+    </div>
+
+    <p class="contact-note">Отвечаю в свободное от работы время. Спасибо за понимание 💚</p>
+  </div>
+
+</div>
+
+<footer>
+  Проект «Копилка воспитателя». Бесплатно для воспитателей Беларуси.<br>
+  Автор: Калоша А. Г.
+</footer>
+
+<script>
+  document.getElementById('search').addEventListener('input', function(e) {
+    var query = e.target.value.toLowerCase().trim();
+    document.querySelectorAll('.group-link').forEach(function(link) {
+      var name = link.getAttribute('data-name').toLowerCase();
+      if (query === '' || name.includes(query)) {
+        link.classList.remove('hidden');
+      } else {
+        link.classList.add('hidden');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
